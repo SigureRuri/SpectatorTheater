@@ -52,7 +52,7 @@ SpectatorTheaterの機能を使用するためのコマンドです。
 `spectatortheater.command.spectatortheater`
 
 `/spectatortheater`コマンドを実行するために必要な権限です。  
-初期状態で全プレイヤーが所持しています。
+初期状態でサーバオペレータが所持しています。
 
 ---
 

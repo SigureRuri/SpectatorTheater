@@ -10,4 +10,4 @@ commands:
     permission-message: "You don't have permission to execute this command."
 permissions:
   spectatortheater.command.spectatortheater:
-    default: true
+    default: op
