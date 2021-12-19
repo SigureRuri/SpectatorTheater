@@ -8,6 +8,7 @@ interface SpectatorManager {
      * スペクテイターモードを開始する
      *
      * @param player 対象のプレイヤー
+     * @return 結果に対応する[StartResult]
      */
     fun start(player: Player): StartResult
 
@@ -15,6 +16,7 @@ interface SpectatorManager {
      * スペクテイターモードを終了する
      *
      * @param player 対象のプレイヤー
+     * @return 結果に対応する[EndResult]
      */
     fun end(player: Player): EndResult
 

@@ -8,7 +8,7 @@ import java.time.LocalDateTime
 /**
  * スペクテイターモードのプレイヤーの情報を表す
  *
- * @property player スペクテイターモードを継続しているプレイヤーのUUID
+ * @property player スペクテイターモードを継続しているプレイヤー
  * @property startedAt スペクテイターモードを開始した時刻
  * @property locationBeforeStart スペクテイターモードを開始する前の位置
  * @property gameModeBeforeStart スペクテイターモードを開始する前のゲームモード
