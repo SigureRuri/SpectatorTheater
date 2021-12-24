@@ -27,13 +27,12 @@ class STSpectatorManager : SpectatorManager {
         val gameModeBeforeChange = player.gameMode
         player.gameMode = GameMode.SPECTATOR
 
-        val information = SpectatorInformation(
+        spectators[uuid] = SpectatorInformation(
             player,
             LocalDateTime.now(),
             player.location.clone(),
             gameModeBeforeChange
         )
-        spectators[uuid] = information
 
         return SpectatorManager.StartResult.SUCCESS
     }
@@ -41,9 +40,7 @@ class STSpectatorManager : SpectatorManager {
     override fun end(player: Player): SpectatorManager.EndResult {
         val uuid = player.uniqueId
 
-        if (!spectators.contains(uuid)) return SpectatorManager.EndResult.NOT_STARTED_YET
-
-        val information = spectators[uuid]!!
+        val information = spectators[uuid] ?: return SpectatorManager.EndResult.NOT_STARTED_YET
 
         // ゲーム内ゲームモードの変更をspectatorsからのremoveより先に行うと、
         // PlayerGameModeChangeEventと干渉するため先にremoveする
