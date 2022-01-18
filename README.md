@@ -31,7 +31,7 @@ SpectatorTheaterはサーバーの再起動を超えたデータの保存を行�
 
 ## Command
 
-`/spectatortheater`
+- `/spectatortheater`
 
 SpectatorTheaterの機能を使用するためのコマンドです。  
 エイリアス: `/spectator`  
@@ -39,21 +39,17 @@ SpectatorTheaterの機能を使用するためのコマンドです。
 
 ### Sub Commands
 
-`/spectatortheater start`
+- `/spectatortheater start`
 
 スペクテイターモードを開始します。  
 必要権限: `spectatortheater.command.spectatortheater.start`
 
----
-
-`/spectatortheater end`
+- `/spectatortheater end`
 
 スペクテイターモードを終了します。  
 必要権限: `spectatortheater.command.spectatortheater.end`
 
----
-
-`/spectatortheater list`
+- `/spectatortheater list`
 
 スペクテイターモードのプレイヤー一覧を表示します。  
 必要権限: `spectatortheater.command.spectatortheater.list`
@@ -62,7 +58,7 @@ SpectatorTheaterの機能を使用するためのコマンドです。
 
 ## Permission
 
-`spectatortheater.command.spectatortheater`
+- `spectatortheater.command.spectatortheater`
 
 `/spectatortheater`コマンドを実行するために必要な権限です。  
 `/spectatortheater`から始まるコマンドを実行するためには、最低限この権限が必要です。  
@@ -81,23 +77,17 @@ SpectatorTheaterの機能を使用するためのコマンドです。
 
 初期状態でサーバオペレータが所持しています。
 
----
-
-`spectatortheater.command.spectatortheater.start`
+- `spectatortheater.command.spectatortheater.start`
 
 `/spectatortheater start`コマンドを実行するために必要な権限です。  
 初期状態でサーバオペレータが所持しています。
 
----
-
-`spectatortheater.command.spectatortheater.end`
+- `spectatortheater.command.spectatortheater.end`
 
 `/spectatortheater end`コマンドを実行するために必要な権限です。  
 初期状態でサーバオペレータが所持しています。
 
----
-
-`spectatortheater.command.spectatortheater.list`
+- `spectatortheater.command.spectatortheater.list`
 
 `/spectatortheater list`コマンドを実行するために必要な権限です。  
 初期状態でサーバオペレータが所持しています。
