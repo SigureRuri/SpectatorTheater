@@ -12,7 +12,8 @@ class SpectatorTheaterCommand : TabExecutor {
 
     private val subCommands = mapOf<String, (Player) -> Unit>(
         "start" to { start(it) },
-        "end" to { end(it) }
+        "end" to { end(it) },
+        "list" to { list(it) }
     )
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
@@ -63,6 +64,16 @@ class SpectatorTheaterCommand : TabExecutor {
             SpectatorManager.EndResult.SUCCESS -> "${ChatColor.GREEN}スペクテイターモードを終了しました。"
         }
         player.sendMessage(message)
+    }
+
+    private fun list(player: Player) {
+        val allOfInformation = SpectatorTheater.spectatorManager.getAllSpectatorInformation()
+        if (allOfInformation.isEmpty()) {
+            player.sendMessage("${ChatColor.YELLOW}スペクテイターモードのプレイヤーは存在しません。")
+        } else {
+            player.sendMessage("${ChatColor.YELLOW}${allOfInformation.size}人のプレイヤーがスペクテイターモードです:")
+            player.sendMessage(allOfInformation.joinToString("${ChatColor.GRAY},${ChatColor.RESET}") { it.player.name })
+        }
     }
 
 }
