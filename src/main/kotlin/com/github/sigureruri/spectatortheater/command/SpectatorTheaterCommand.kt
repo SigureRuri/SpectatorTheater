@@ -10,6 +10,11 @@ import org.bukkit.entity.Player
 
 class SpectatorTheaterCommand : TabExecutor {
 
+    private val subCommands = mapOf<String, (Player) -> Unit>(
+        "start" to { start(it) },
+        "end" to { end(it) }
+    )
+
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender !is Player) {
             sender.sendMessage("${ChatColor.RED}spectatortheaterコマンドはプレイヤーのみ使用可能です。")
@@ -17,25 +22,26 @@ class SpectatorTheaterCommand : TabExecutor {
         }
 
         val subCommand = args.getOrNull(0) ?: return false
-        when (subCommand) {
-            "start" -> {
-                start(sender)
-            }
-            "end" -> {
-                end(sender)
-            }
-            else -> return false
+        val subCommandEffect = subCommands[subCommand] ?: return false
+
+        if (!sender.hasPermission("spectatortheater.command.spectatortheater.${subCommand}")) {
+            sender.sendMessage("You don't have permission to execute this command.")
+            return true
         }
+
+        subCommandEffect(sender)
 
         return true
     }
 
     override fun onTabComplete(sender: CommandSender, command: Command, alias: String, args: Array<out String>): List<String> {
         val result = mutableListOf<String>()
-        val subCommand = args.getOrElse(0) { "" }
+        val inputSubCommand = args.getOrElse(0) { "" }
 
-        listOf("start", "end").forEach {
-            if (it.startsWith(subCommand)) result.add(it)
+        subCommands.keys.forEach { subCommand ->
+            if (!sender.hasPermission("spectatortheater.command.spectatortheater.${subCommand}")) return@forEach
+
+            if (subCommand.startsWith(inputSubCommand)) result.add(subCommand)
         }
 
         return result
