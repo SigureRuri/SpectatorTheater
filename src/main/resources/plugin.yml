@@ -11,3 +11,9 @@ commands:
 permissions:
   spectatortheater.command.spectatortheater:
     default: op
+  spectatortheater.command.spectatortheater.start:
+    default: op
+  spectatortheater.command.spectatortheater.end:
+    default: op
+  spectatortheater.command.spectatortheater.list:
+    default: op
