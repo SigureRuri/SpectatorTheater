@@ -7,9 +7,9 @@ commands:
     usage: /<command> [start|end|list]
     aliases: [spectator]
 permissions:
-  spectatortheater.command.spectatortheater.start:
+  spectatortheater.start:
     default: op
-  spectatortheater.command.spectatortheater.end:
+  spectatortheater.end:
     default: op
-  spectatortheater.command.spectatortheater.list:
+  spectatortheater.list:
     default: op
