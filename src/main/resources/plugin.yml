@@ -4,7 +4,7 @@ main: com.github.sigureruri.spectatortheater.SpectatorTheater
 authors: [ SigureRuri ]
 commands:
   spectatortheater:
-    usage: /<command> [start|end]
+    usage: /<command> [start|end|list]
     aliases: [spectator]
 permissions:
   spectatortheater.command.spectatortheater.start:
