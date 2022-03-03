@@ -4,16 +4,12 @@ main: com.github.sigureruri.spectatortheater.SpectatorTheater
 authors: [ SigureRuri ]
 commands:
   spectatortheater:
-    usage: /<command> [start|end]
+    usage: /<command> [start|end|list]
     aliases: [spectator]
-    permission: spectatortheater.command.spectatortheater
-    permission-message: "You don't have permission to execute this command."
 permissions:
-  spectatortheater.command.spectatortheater:
+  spectatortheater.start:
     default: op
-  spectatortheater.command.spectatortheater.start:
+  spectatortheater.end:
     default: op
-  spectatortheater.command.spectatortheater.end:
-    default: op
-  spectatortheater.command.spectatortheater.list:
+  spectatortheater.list:
     default: op

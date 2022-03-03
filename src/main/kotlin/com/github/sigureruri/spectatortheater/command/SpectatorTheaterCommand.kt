@@ -25,7 +25,7 @@ class SpectatorTheaterCommand : TabExecutor {
         val subCommand = args.getOrNull(0) ?: return false
         val subCommandEffect = subCommands[subCommand] ?: return false
 
-        if (!sender.hasPermission("spectatortheater.command.spectatortheater.${subCommand}")) {
+        if (!sender.hasPermission("spectatortheater.${subCommand}")) {
             sender.sendMessage("You don't have permission to execute this command.")
             return true
         }
@@ -40,7 +40,7 @@ class SpectatorTheaterCommand : TabExecutor {
         val inputSubCommand = args.getOrElse(0) { "" }
 
         subCommands.keys.forEach { subCommand ->
-            if (!sender.hasPermission("spectatortheater.command.spectatortheater.${subCommand}")) return@forEach
+            if (!sender.hasPermission("spectatortheater.${subCommand}")) return@forEach
 
             if (subCommand.startsWith(inputSubCommand)) result.add(subCommand)
         }
