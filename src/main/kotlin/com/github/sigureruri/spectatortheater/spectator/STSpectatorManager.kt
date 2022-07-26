@@ -17,7 +17,7 @@ class STSpectatorManager : SpectatorManager {
 
         if (spectators.contains(uuid))
             return SpectatorManager.StartResult.ALREADY_STARTED
-        if (!SpectatorTheater.stConfig.ENABLED_WORLDS.contains(player.world))
+        if (!SpectatorTheater.stConfig.ENABLED_WORLDS.contains(player.world.name.lowercase()))
             return SpectatorManager.StartResult.OUT_OF_ENABLED_WORLDS
         if (isInCoolTime(uuid))
             return SpectatorManager.StartResult.IN_COOL_TIME
